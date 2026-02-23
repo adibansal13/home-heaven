@@ -1,0 +1,57 @@
+<%layout("/layouts/boilerplate.ejs")%>
+
+<div class="flex flex-col justify-center items-center">
+  <div class="grid grid-cols-8 md:w-3/5 gap-3">
+    <img
+      src="<%=listing.image%>"
+      alt="Image"
+      class="col-span-8 rounded-lg w-full h-50 md:h-80"
+    />
+    <!-- Listing Detail -->
+    <div class="col-span-8 sm:col-span-5 w-full bg-white rounded-lg p-4 shadow">
+      <h1 class="text-2xl sm:text-3xl font-bold mt-1 sm:mt-3 text-[#1E4F8A]">
+        <%=listing.title%>
+      </h1>
+      <p class="font-bold text-[#1F2933] mb-1 sm:mb-3">
+        <%=listing.location%>, <%=listing.state%>
+      </p>
+      <p class=""><%=listing.description%></p>
+      <p class="text-xl sm:text-2xl font-bold text-[#2FA84F] mt-1 sm:mt-4">
+        &#8377; <%= listing.price%>/Night
+      </p>
+      <div class="flex mt-3">
+        <a
+          href="/listings/<%=listing._id%>/edit"
+          class="px-3 py-1 rounded-lg bg-[#1E4F8A] text-white active:scale-90 mr-2"
+          >Edit</a
+        >
+        <form
+          method="post"
+          action="/listings/<%=listing._id%>/delete?_method=DELETE"
+        >
+          <button
+            class="px-3 py-1 rounded-lg bg-red-500 text-white active:scale-90 mr-2"
+          >
+            Delete
+          </button>
+        </form>
+      </div>
+    </div>
+    <!-- Add Review Section -->
+    <div class="bg-white col-span-8 sm:col-span-3 p-6 rounded-lg shadow">
+      <h3 class="text-xl font-semibold mb-1">Add Review</h3>
+      <div class="flex space-x-1 text-yellow-400 text-xl mb-1">★ ★ ★ ★ ☆</div>
+      <textarea
+        class="w-full border rounded-lg p-3 mb-1"
+        rows="2"
+        placeholder="Write your review..."
+      ></textarea>
+      <button
+        class="w-full bg-red-500 hover:bg-red-600 text-white py-2 rounded-lg"
+      >
+        Submit Review
+      </button>
+    </div>
+    <h1>Reviews</h1>
+  </div>
+</div>

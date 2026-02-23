@@ -1,0 +1,14 @@
+* {
+  box-sizing: border-box;
+  font-family: "Inter", sans-serif;
+}
+.container {
+  padding-top: 2rem;
+  max-width: 1300px;
+  margin: auto;
+  padding-top: 5rem;
+}
+
+.listing-card:hover {
+  box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.378);
+}

@@ -1,17 +1,18 @@
-<!DOCTYPE html>
-<html lang="en">
+<%layout("/layouts/boilerplate.ejs")%>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>HomeHeaven</title>
-</head>
 
-<body>
-  <h1>Listings</h1>
+<div class="flex justify-center flex-wrap gap-5">
   <% for(let listing of allListing){ %>
-  <a href="/listings/<%=listing._id%>"><%=listing.title%></a><br>
+  <div class="listing-card w-75 shadow rounded-lg ">
+    <img src="<%=listing.image%>s" alt="Listing Image" class="object-fill rounded-t-lg  w-full h-50" loading="lazy">
+    <div class="px-2 my-2">
+      <h3 class="text-lg font-bold"><%=listing.title%></h3>
+      <p class="text-sm text-[#1F2933]"><%=listing.location%>, <%=listing.state%></p>
+    </div>
+    <div class="flex px-2 my-3 flex justify-between">
+      <p class="font-bold text-[#2FA84F]">&#8377; <%=listing.price%>/night</p>
+      <a href="/listings/<%=listing._id%>" class="px-2 py-1 bg-[#1E4F8A] rounded-lg text-white me-2">View</a>
+    </div>
+  </div>
   <% } %>
-</body>
-
-</html>
+</div>

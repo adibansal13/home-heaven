@@ -1,0 +1,28 @@
+nav {
+  border-color: #1e4f8a;
+  background-color: white;
+}
+
+.navigation-btn a:hover {
+  color: #ff8a00;
+}
+
+@media screen and (max-width: 770px) {
+  .toggle {
+    transition: 1s;
+    z-index: -5;
+  }
+  .toggle_container {
+    margin-inline: auto;
+  }
+  .toggle_container a {
+    padding: 5px 10px;
+    background-color: #ff8a00;
+    color: white;
+    margin: 0.2rem;
+    border-radius: 15px;
+  }
+  a {
+    font-size: 0.8rem;
+  }
+}

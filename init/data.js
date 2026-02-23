@@ -46,7 +46,7 @@ module.exports = [
     location: "Mumbai",
     state: "Maharashtra",
     image:
-      "https://media.istockphoto.com/id/503044702/photo/illuminated-sky-and-outside-of-waterfront-buiding.webp?a=1&b=1&s=612x612&w=0&k=20&c=5VdPmCk9kbKfzaYYKggwuNk68igKx_WuJ33J0jZVi0U=",
+      "https://cdngeneralcf.rentcafe.com/dmslivecafe/2/128680/updated-6.jpg?quality=85&scale=both&",
   },
   {
     title: "Heritage Haveli Stay",
@@ -82,7 +82,8 @@ module.exports = [
     price: 4200,
     location: "Alappuzha",
     state: "Kerala",
-    image: "https://source.unsplash.com/600x400/?kerala-houseboat",
+    image:
+      "https://cdngeneralcf.rentcafe.com/dmslivecafe/2/128680/updated-6.jpg?quality=85&scale=both&",
   },
   {
     title: "Hilltop Escape",
