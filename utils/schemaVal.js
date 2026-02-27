@@ -8,3 +8,8 @@ module.exports.listingValidation = Joi.object({
   state: Joi.string().required(),
   country: Joi.string().required(),
 });
+
+module.exports.reviewValidation = Joi.object({
+  rating: Joi.number().required().min(1).max(5),
+  comment: Joi.string().required(),
+});
