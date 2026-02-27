@@ -40,18 +40,33 @@
     <!-- Add Review Section -->
     <div class="bg-white col-span-8 sm:col-span-3 p-6 rounded-lg shadow">
       <h3 class="text-xl font-semibold mb-1">Add Review</h3>
-      <div class="flex space-x-1 text-yellow-400 text-xl mb-1">★ ★ ★ ★ ☆</div>
-      <textarea
-        class="w-full border rounded-lg p-3 mb-1"
-        rows="2"
-        placeholder="Write your review..."
-      ></textarea>
-      <button
-        class="w-full bg-red-500 hover:bg-red-600 text-white py-2 rounded-lg"
-      >
-        Submit Review
-      </button>
+      <form id="reviewForm">
+        <input type="range" min="1" max="5" class="w-full" name="rating" />
+        <textarea
+          class="w-full border rounded-lg p-3 mb-1"
+          rows="2"
+          placeholder="Write your review..."
+          name="comment"
+        ></textarea>
+        <button
+          class="w-full bg-red-500 active:scale-90 hover:bg-red-600 text-white py-2 rounded-lg"
+        >
+          Submit Review
+        </button>
+      </form>
     </div>
-    <h1>Reviews</h1>
+    <h1 class="text-2xl col-span-8">Reviews</h1>
+    <div
+      class="reviewContainer col-span-8  grid grid-cols-8 gap-2 mb-4 justify-center"
+    >
+      <% for(let review of listing.reviews) {%>
+      <div class="review_card bg-white w-full col-span-4 p-3 rounded-lg shadow">
+        <h1><%= review.rating %> Stars</h1>
+        <p><%= review.comment %></p>
+        <form method="post" action="/listings/<%=listing._id%>/reviews/<%=review._id%>?_method=DELETE"><button class="px-2 active:scale-90 py-1 bg-red-500 text-white rounded-lg">Delete</button></form>
+      </div>
+      <% } %>
+    </div>
   </div>
 </div>
+<script src="/js/review.js"></script>
