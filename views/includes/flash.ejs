@@ -1,0 +1,26 @@
+<% if(successMsg&& successMsg.length){ %>
+<div
+  class="flash-message h-15  rounded-lg bg-green-500 text-white text-lg w-80 flex items-center p-3"
+>
+  <p><%= successMsg %></p>
+  <button
+    onclick="closeFlash()"
+    class="ml-auto text-white hover:scale-130 text-2xl font-bold"
+  >
+    &times;
+  </button>
+</div>
+<% } %>
+<% if(errorMsg&& errorMsg.length){ %>
+<div
+  class="flash-message h-15  rounded-lg bg-red-500 text-white text-lg w-80 flex items-center p-3"
+>
+  <p><%= errorMsg %></p>
+  <button
+    onclick="closeFlash()"
+    class="ml-auto text-white hover:scale-130 text-2xl font-bold"
+  >
+    &times;
+  </button>
+</div>
+<% } %>

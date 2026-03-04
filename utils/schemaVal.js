@@ -6,7 +6,8 @@ module.exports.listingValidation = Joi.object({
   price: Joi.number().min(0).required(),
   location: Joi.string().required(),
   state: Joi.string().required(),
-  country: Joi.string().required(),
+  image: Joi.string(),
+  country: Joi.string(),
 });
 
 module.exports.reviewValidation = Joi.object({

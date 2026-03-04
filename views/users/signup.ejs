@@ -1,0 +1,42 @@
+<%layout("/layouts/boilerplate.ejs")%>
+<div class="flex justify-center items-center">
+  <form
+    method="post"
+    action="/signup"
+    class="flex flex-col bg-white shadow mt-6 p-4 sm:w-1/2 md:w-1/3 rounded-lg"
+  >
+    <h1 class="text-2xl mb-5">Sign Up HomeHaven</h1>
+    <label for="username" class="my-2">Username</label>
+    <input
+      type="text"
+      name="username"
+      id="username"
+      class="bg-gray-200 rounded-lg mb-4 outline-none px-2 py-1"
+    />
+    <label for="email">Email</label>
+    <input
+      type="email"
+      name="email"
+      id="email"
+      class="bg-gray-200 rounded-lg mb-4 outline-none px-2 py-1"
+    />
+    <label for="password">Password</label>
+    <input
+      type="password"
+      name="password"
+      id="password"
+      class="bg-gray-200 rounded-lg mb-4 outline-none px-2 py-1"
+    />
+    <p class="my-2">
+      Already have an account?
+      <a href="/login" class="text-[#2FA84F]">Login</a>
+    </p>
+    <div>
+      <button
+        class="text-white bg-[#2FA84F] hover:bg-[#FF8A00] px-3 py-1 rounded-lg"
+      >
+        Sign Up
+      </button>
+    </div>
+  </form>
+</div>

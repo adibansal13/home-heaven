@@ -19,6 +19,7 @@
       <p class="text-xl sm:text-2xl font-bold text-[#2FA84F] mt-1 sm:mt-4">
         &#8377; <%= listing.price%>/Night
       </p>
+      <% if(currUser && currUser._id.equals(listing.owner._id)){ %>
       <div class="flex mt-3">
         <a
           href="/listings/<%=listing._id%>/edit"
@@ -36,11 +37,13 @@
           </button>
         </form>
       </div>
+      <%}%>
     </div>
+    <% if(currUser){ %>
     <!-- Add Review Section -->
     <div class="bg-white col-span-8 sm:col-span-3 p-6 rounded-lg shadow">
       <h3 class="text-xl font-semibold mb-1">Add Review</h3>
-      <form id="reviewForm">
+      <form id="reviewForm" method="post" action="/listings/<%=listing._id%>/reviews" >
         <input type="range" min="1" max="5" class="w-full" name="rating" />
         <textarea
           class="w-full border rounded-lg p-3 mb-1"
@@ -55,18 +58,22 @@
         </button>
       </form>
     </div>
+    <% } %>
+    <h1 class="col-span-8"><%= listing.owner.email %></h1>
     <h1 class="text-2xl col-span-8">Reviews</h1>
     <div
       class="reviewContainer col-span-8  grid grid-cols-8 gap-2 mb-4 justify-center"
     >
       <% for(let review of listing.reviews) {%>
       <div class="review_card bg-white w-full col-span-4 p-3 rounded-lg shadow">
+        <h1><%=review.author.email%></h1>
         <h1><%= review.rating %> Stars</h1>
         <p><%= review.comment %></p>
+        <% if(currUser && currUser._id.equals(review.author._id)){%>
         <form method="post" action="/listings/<%=listing._id%>/reviews/<%=review._id%>?_method=DELETE"><button class="px-2 active:scale-90 py-1 bg-red-500 text-white rounded-lg">Delete</button></form>
+        <% } %>
       </div>
       <% } %>
     </div>
   </div>
 </div>
-<script src="/js/review.js"></script>

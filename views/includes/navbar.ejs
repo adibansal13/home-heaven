@@ -11,10 +11,28 @@
   </div>
   <div class="flex items-center">
     <a
-      href=""
+      href="/listings"
       class="px-4 py-2 bg-[#2FA84F] text-white hover:bg-[#FF8A00] rounded-xl mx-2"
       >Book Now</a
     >
+    <% if(!currUser){ %>
+    <a
+      href="/login"
+      class="px-4 py-2 bg-[#2FA84F] text-white hover:bg-[#FF8A00] rounded-xl mx-2"
+      >Login</a
+    >
+    <a
+      href="/signup"
+      class="px-4 py-2 bg-[#2FA84F] text-white hover:bg-[#FF8A00] rounded-xl mx-2"
+      >Sign Up</a
+    >
+    <% }else{ %>
+    <a
+      href="/logout"
+      class="px-4 py-2 bg-[#2FA84F] text-white hover:bg-[#FF8A00] rounded-xl mx-2"
+      >Logout</a
+    >
+    <% } %>
     <a class="md:hidden open-toggle"
       ><i class="fa-solid fa-bars text-xl"></i
     ></a>

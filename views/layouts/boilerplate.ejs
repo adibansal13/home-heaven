@@ -30,7 +30,9 @@
   </head>
   <body class="bg-gray-100">
     <%- include("../includes/navbar.ejs")%>
-    <div class="container px-2"><%- body %></div>
+    <div class="container px-2">
+      <%- include("../includes/flash.ejs") %> <%- body %>
+    </div>
     <script src="/js/script.js"></script>
   </body>
 </html>
